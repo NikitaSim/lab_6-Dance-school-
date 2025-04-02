@@ -13,6 +13,4 @@ public:
 	void print_info() const override;
 	std::string get_style() const;
 
-
-
 };

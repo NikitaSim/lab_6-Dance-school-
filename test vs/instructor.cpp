@@ -12,7 +12,7 @@ bool Instructor::can_teach(const std::string& style) {
 
 void Instructor::print_info() const {
 	Person::print_info();
-	std::cout << ", Teaches: ";
+	std::cout << "Teaches: ";
 	for (std::string styles : teaching_style) {
 		std::cout << styles << " " << std::endl;
 	}

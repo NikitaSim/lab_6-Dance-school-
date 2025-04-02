@@ -5,6 +5,8 @@
 #include "danceClass.h"
 #include "DanceSchool.h"
 
+// печатать кто на занятии
+
 DanceSchool::~DanceSchool() {
 	// Освобождаем всю память
 	for (DanceClass* cls : classes) {
@@ -20,6 +22,7 @@ DanceSchool::~DanceSchool() {
 }
 
 void DanceSchool::add_member(Student* member) {
+	if (!member) throw std::invalid_argument("Member cannot be null");
 	members.push_back(member);
 }
 
@@ -44,11 +47,11 @@ size_t DanceSchool::classCount() const {
 }
 
 Instructor* DanceSchool::getInstructor(int id_instructor) {
-	if (id_instructor < instructors.size()) {
+	if (id_instructor >= 0 && id_instructor < instructors.size()) {
 		return instructors[id_instructor]; // -1 если считать с 1
 	}
 	std::cout << "Instructor not found!!!" << std::endl;
-	return nullptr;
+	throw std::out_of_range("Invalid instructor index");
 }
 
 void DanceSchool::printInstructors() const {

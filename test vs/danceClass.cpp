@@ -10,11 +10,24 @@ bool DanceClass::is_suitable_for(const Student* member) const {
 	return (member->get_style() == style);
 }
 bool DanceClass::enroll(Student* member) {
+	if (!member) {
+		std::cerr << "Error: Null student pointer\n";
+		return false;
+	}
+
+	if (member->get_style().empty()) {
+		std::cerr << "Error: Student has no dance style\n";
+		return false;
+	}
+
+	if (!member || member->get_style().empty()) { // Проверка
+		return false;
+	}
 	if (participants.size() >= max_participants) {
 		std::cout << "There are no empty seats in the dance class" << std::endl;
 		return false;
 	}
-	if (is_suitable_for(member)) {
+	if (!(is_suitable_for(member))) {
 		std::cout << "Member's style doesn't match class style\n";
 		return false;
 	}
@@ -24,7 +37,11 @@ bool DanceClass::enroll(Student* member) {
 }
 
 void DanceClass::get_info() const {
-	std::cout << style << " class at " << time << " in " << location << "Instructor: " << instructor->get_name() << std::endl;
+	if (!instructor) {
+        std::cout << "ERROR: No instructor assigned\n";
+        return;
+    }
+	std::cout << style << " class at " << time << " in " << location << " Instructor: " << instructor->get_name() << std::endl;
 }
 
 DanceClass::~DanceClass() {
