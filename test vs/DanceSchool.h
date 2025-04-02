@@ -15,6 +15,16 @@ public:
 	void add_instructor(Instructor*);
 	void schedule_class(DanceClass*);
 
+	size_t instructorCount() const;
+	size_t studentCount() const;
+	size_t classCount() const;
+
+	Instructor* getInstructor(int);
+	void printInstructors() const;
+	void printStudents() const;
+	
+	bool enrollStudent(int, int) const;
+
 	std::vector<DanceClass> find_classes(const std::string&) const; // найти занятия по стилю
 	void get_schedule() const; //сделать войд чтобы сразу выводило
 	~DanceSchool();
