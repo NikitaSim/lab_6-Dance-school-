@@ -103,6 +103,7 @@ int main() {
 				cout << "\nДоступные инструкторы:\n";
 				school.printInstructors();// надо
 				instructorIdx = inputNumber("Выберите инструктора (номер): ");
+				instructorIdx--;
 				
 				if (!school.getInstructor(instructorIdx) || !school.getInstructor(instructorIdx)->can_teach(style)) {
 					cout << "Ошибка: неверный инструктор или стиль\n";
@@ -137,10 +138,12 @@ int main() {
 				cout << "Доступные ученики:\n";
 				school.printStudents();
 				memberIdx = inputNumber("Выберите ученика (номер): ");
+				memberIdx--;
 
 				cout << "\nДоступные занятия:\n";
 				school.get_schedule();
 				classIdx = inputNumber("Выберите занятие (номер): ");
+				classIdx--;
 
 				if (school.enrollStudent(memberIdx, classIdx)) { // прикольно надо сделать()
 					cout << "Запись успешна!\n";

@@ -46,7 +46,7 @@ size_t DanceSchool::classCount() const {
 	return classes.size();
 }
 
-Instructor* DanceSchool::getInstructor(int id_instructor) {
+Instructor* DanceSchool::getInstructor(int id_instructor) const {
 	if (id_instructor >= 0 && id_instructor < instructors.size()) {
 		return instructors[id_instructor]; // -1 если считать с 1
 	}
@@ -55,14 +55,20 @@ Instructor* DanceSchool::getInstructor(int id_instructor) {
 }
 
 void DanceSchool::printInstructors() const {
+	int i{ 1 };
 	for (Instructor* inst : instructors) {
+		std::cout << i << ": ";
 		inst->print_info();
+		i++;
 	}
 }
 
 void DanceSchool::printStudents() const {
+	int i{ 1 };
 	for (Student* stud : members) {
+		std::cout << i<<": ";
 		stud->print_info();
+		i++;
 	}
 }
 
@@ -76,9 +82,12 @@ bool DanceSchool::enrollStudent(int stud_id, int class_id) const {
 }
 
 void DanceSchool::get_schedule() const {
+	int i{ 1 };
 	std::cout << "\n===== School Schedule =====\n";
-	for (const auto* cls : classes) {
+	for (DanceClass* cls : classes) {
+		std::cout << i << ": ";
 		cls->get_info();
+		i++;
 	}
 	std::cout << "==========================\n";
 }

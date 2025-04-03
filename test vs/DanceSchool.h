@@ -19,7 +19,7 @@ public:
 	size_t studentCount() const;
 	size_t classCount() const;
 
-	Instructor* getInstructor(int);
+	Instructor* getInstructor(int) const;
 	void printInstructors() const;
 	void printStudents() const;
 	

@@ -14,5 +14,5 @@ std::string Student::get_style() const {
 
 void Student::print_info() const {
 	Person::print_info();
-	std::cout << ", Style: " << dance_style<< std::endl;
+	std::cout << "Style: " << dance_style<< std::endl;
 }
