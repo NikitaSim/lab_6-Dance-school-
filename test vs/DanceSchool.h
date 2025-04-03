@@ -25,7 +25,7 @@ public:
 	
 	bool enrollStudent(int, int) const;
 
-	std::vector<DanceClass> find_classes(const std::string&) const; // найти занятия по стилю
+	//std::vector<DanceClass> find_classes(const std::string&) const; // найти занятия по стилю
 	void get_schedule() const; //сделать войд чтобы сразу выводило
 	~DanceSchool();
 };

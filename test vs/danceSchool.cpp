@@ -51,7 +51,8 @@ Instructor* DanceSchool::getInstructor(int id_instructor) const {
 		return instructors[id_instructor]; // -1 если считать с 1
 	}
 	std::cout << "Instructor not found!!!" << std::endl;
-	throw std::out_of_range("Invalid instructor index");
+	return nullptr;
+	//throw std::out_of_range("Invalid instructor index");
 }
 
 void DanceSchool::printInstructors() const {

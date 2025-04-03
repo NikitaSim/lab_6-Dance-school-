@@ -40,13 +40,13 @@ int main() {
 
 		do {
 			showMainMenu();
-			choice = inputNumber(""); //???
+			choice = inputNumber("");
 
 			switch (choice) {
 			case 1: { // Добавить ученика
 				string name, style;
-				int age, level;
-
+				int age;
+				
 				cout << "\n-- Добавление ученика --\n";
 				cout << "Имя: ";
 				getline(cin, name);
@@ -83,7 +83,7 @@ int main() {
 
 			case 3: { // Создать занятие
 
-				if (school.instructorCount() == 0) { // надо
+				if (school.instructorCount() == 0) {
 					cout << "Сначала добавьте инструкторов!\n";
 					break;
 				}
@@ -101,7 +101,7 @@ int main() {
 
 				maxStudents = inputNumber("Макс. участников: ");
 				cout << "\nДоступные инструкторы:\n";
-				school.printInstructors();// надо
+				school.printInstructors();
 				instructorIdx = inputNumber("Выберите инструктора (номер): ");
 				instructorIdx--;
 				
@@ -114,7 +114,7 @@ int main() {
 				{
 					DanceClass* cls = new DanceClass(
 						time, location, style,
-						school.getInstructor(instructorIdx), // тоже было бы неплохо(работа сугубо через школу)
+						school.getInstructor(instructorIdx),
 						maxStudents
 					);
 
@@ -145,7 +145,7 @@ int main() {
 				classIdx = inputNumber("Выберите занятие (номер): ");
 				classIdx--;
 
-				if (school.enrollStudent(memberIdx, classIdx)) { // прикольно надо сделать()
+				if (school.enrollStudent(memberIdx, classIdx)) { 
 					cout << "Запись успешна!\n";
 				}
 				else {

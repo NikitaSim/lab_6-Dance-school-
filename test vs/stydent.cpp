@@ -16,3 +16,11 @@ void Student::print_info() const {
 	Person::print_info();
 	std::cout << "Style: " << dance_style<< std::endl;
 }
+
+std::string Student::get_name() const {
+	return name;
+}
+
+int Student::get_age() const {
+	return age;
+}

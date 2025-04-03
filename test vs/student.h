@@ -11,6 +11,9 @@ public:
 	Student(const std::string&, int, const std::string&);
 	void change_style(const std::string&);
 	void print_info() const override;
-	std::string get_style() const;
 
+
+	std::string get_style() const;
+	std::string get_name() const;
+	int get_age() const;
 };
