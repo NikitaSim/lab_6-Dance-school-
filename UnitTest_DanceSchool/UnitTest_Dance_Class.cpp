@@ -12,13 +12,6 @@ namespace UnitTestDanceSchool
     {
     public:
 
-        /*TEST_METHOD(TestClassCreation)
-        {
-            Instructor* instr = new Instructor("John", 40);
-            DanceClass dc("18:00", "Studio 1", "Salsa", instr, 10);
-            Assert::AreEqual(std::string("Salsa"), dc.get_style());
-        }*/
-
         TEST_METHOD(TestSuccessfulEnrollment)
         {
             Instructor* instr = new Instructor("Elena", 35);
